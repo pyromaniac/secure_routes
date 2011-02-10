@@ -1,0 +1,36 @@
+= SecureRoutes
+
+== Warning! Proof of concept.
+
+Secure routes is routing-level support for ssl in your rails 3 application.
+
+== Installation
+
+To install simply add this to your Gemfile:
+  gem 'secure_routes'
+
+Then you need to enable secure routing in your environment config:
+  config.action_dispatch.secure_routes = true
+
+== Usage
+
+If you want your action to force https protocol, add this to routes:
+  match 'login' => 'sessions#new', :secure => true
+
+Or
+  scope :secure => true do
+    match 'login' => 'sessions#new'
+  end
+
+And if you'll try to access http://host.com/login then you'll be redirected to https://host.com/login
+
+To force http protocol, just set <tt>:secure => false</tt>. Redirection rules works here too.
+If protocol is unnesesary - don't set <tt>:secure</tt> option.
+
+You can setup secure actions usage with:
+  config.action_dispatch.secure_routes = true
+
+in your environment. It is <tt>false</tt> by default. So you can use securing for production only.
+
+To spec it just clone repo, then:
+  bundle && rake spec
