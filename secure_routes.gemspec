@@ -4,7 +4,7 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{ssl_routes}
+  s.name = %q{secure_routes}
   s.version = "0.0.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
@@ -23,10 +23,11 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
-    "lib/ssl_routes.rb",
-    "lib/ssl_routes/mapper.rb",
-    "lib/ssl_routes/options.rb",
-    "lib/ssl_routes/route_set.rb",
+    "lib/secure_routes.rb",
+    "lib/secure_routes/mapper.rb",
+    "lib/secure_routes/options.rb",
+    "lib/secure_routes/route_set.rb",
+    "secure_routes.gemspec",
     "spec/dummy/Rakefile",
     "spec/dummy/app/controllers/application_controller.rb",
     "spec/dummy/app/controllers/ssl_controller.rb",
@@ -47,11 +48,10 @@ Gem::Specification.new do |s|
     "spec/dummy/config/initializers/session_store.rb",
     "spec/dummy/config/routes.rb",
     "spec/dummy/script/rails",
-    "spec/spec_helper.rb",
-    "spec/ssl_routes_spec.rb",
-    "ssl_routes.gemspec"
+    "spec/secure_routes_spec.rb",
+    "spec/spec_helper.rb"
   ]
-  s.homepage = %q{http://github.com/pyromaniac/ssl_routes}
+  s.homepage = %q{http://github.com/pyromaniac/secure_routes}
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.4.2}
   s.summary = %q{Rails ssl requirements}
@@ -70,8 +70,8 @@ Gem::Specification.new do |s|
     "spec/dummy/config/initializers/secret_token.rb",
     "spec/dummy/config/initializers/session_store.rb",
     "spec/dummy/config/routes.rb",
-    "spec/spec_helper.rb",
-    "spec/ssl_routes_spec.rb"
+    "spec/secure_routes_spec.rb",
+    "spec/spec_helper.rb"
   ]
 
   if s.respond_to? :specification_version then
@@ -81,14 +81,12 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<rails>, [">= 0"])
       s.add_development_dependency(%q<sqlite3-ruby>, [">= 0"])
       s.add_development_dependency(%q<rspec-rails>, [">= 0"])
-      s.add_development_dependency(%q<autotest>, [">= 0"])
       s.add_development_dependency(%q<jeweler>, [">= 0"])
       s.add_development_dependency(%q<mongrel>, [">= 0"])
     else
       s.add_dependency(%q<rails>, [">= 0"])
       s.add_dependency(%q<sqlite3-ruby>, [">= 0"])
       s.add_dependency(%q<rspec-rails>, [">= 0"])
-      s.add_dependency(%q<autotest>, [">= 0"])
       s.add_dependency(%q<jeweler>, [">= 0"])
       s.add_dependency(%q<mongrel>, [">= 0"])
     end
@@ -96,7 +94,6 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<rails>, [">= 0"])
     s.add_dependency(%q<sqlite3-ruby>, [">= 0"])
     s.add_dependency(%q<rspec-rails>, [">= 0"])
-    s.add_dependency(%q<autotest>, [">= 0"])
     s.add_dependency(%q<jeweler>, [">= 0"])
     s.add_dependency(%q<mongrel>, [">= 0"])
   end
